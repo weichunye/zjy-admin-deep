@@ -15,7 +15,7 @@
               :rules="[
       { required: true, message: '请输入密码', trigger: 'blur' },]"
             >
-              <el-input @keyup.enter.native="toLogin('loginForm')" placeholder="请输入密码" v-model="loginForm.passWord"></el-input>
+              <el-input type="password" @keyup.enter.native="toLogin('loginForm')" placeholder="请输入密码" v-model="loginForm.passWord"></el-input>
             </el-form-item>
           </el-form>
           <div @click="toLogin('loginForm')" class="btn-submit">登 录</div>

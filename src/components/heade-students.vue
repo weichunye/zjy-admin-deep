@@ -2,12 +2,12 @@
   <div class="header-school">
     <ul class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>
       </li>
       <li class="login">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
-            花花<span class="span-text">学生</span><i class="el-icon-arrow-down el-icon--right"></i>
+            钱晓雪<span class="span-text">学生</span><i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu class="dropdom-cont" slot="dropdown"><router-link  :to="{path:'/'}" >
             <el-dropdown-item>退出</el-dropdown-item></router-link>

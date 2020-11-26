@@ -162,7 +162,7 @@ import Heade from '../../components/heade.vue'
     }
 	}
   .creatClass-dia{
-    margin: 40px 40px;
+    margin: 40px auto;
     //width: 100%;
     min-height: 300px;
    .add-data{

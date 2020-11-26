@@ -245,6 +245,7 @@ import Heade from '../../components/heade.vue'
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            height:36px;
           }
           span{
             float: right;

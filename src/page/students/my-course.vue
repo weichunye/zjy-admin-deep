@@ -159,6 +159,7 @@
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;
+            height:36px;
           }
           span{
             float: right;

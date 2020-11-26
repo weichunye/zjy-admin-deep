@@ -271,6 +271,13 @@ import Heade from '../../components/heade.vue'
         display: block;
       }
     }
+    .el-radio__input.is-checked .el-radio__inner{
+      background: #3901b9;
+      border-color:#3901b9;
+    }
+    .el-radio__input.is-checked+.el-radio__label{
+      color: #3901b9;
+    }
 	}
 
 </style>

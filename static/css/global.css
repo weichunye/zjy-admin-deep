@@ -33,6 +33,15 @@ button {
 li {
 	list-style: none;
 }
+input:focus{
+  border-color:#3901b9!important;
+}
+textarea:focus{
+  border-color:#3901b9!important;
+}
+input:hover{
+  border-color:#3901b9!important;
+}
 
 input::-webkit-input-placeholder {
 	/* WebKit browsers */
@@ -66,7 +75,7 @@ input:-ms-input-placeholder {
 .pre-box{
   overflow: hidden;
   margin: 0 auto;
-  width: 1100px;
+  min-width: 1100px;
 }
 
 

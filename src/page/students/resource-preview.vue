@@ -15,6 +15,7 @@
           </li>
         </ul>
         <p>资源介绍：《中国古代房内考》是关于中国古代性文化的专著，在西方汉学界享有盛誉，从根本上影响和改变了西方世界对中国的了解。</p>
+        <p>预览时间：0时3分{{prewTime}}秒</p>
       </div>
       <div class="img-box">
         <img src="http://img.xuexi111.org/d/file/kejian/wenxue/2014-12-01/c65a3ae8860d18b6034db55198e59fec.jpg" alt="">
@@ -47,13 +48,22 @@
           imageUrl:'',
 
         },
-        radio:'1'
+        radio:'1',
+        prewTime:13
       }
 		},
       computed:{
 
       },
 		mounted() {
+      setInterval(()=>{
+        if(this.prewTime<60){
+          this.prewTime=this.prewTime+1
+        }else {
+          this.prewTime=0
+        }
+
+      },1000)
 
 
 		},

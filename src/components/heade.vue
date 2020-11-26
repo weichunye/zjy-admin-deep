@@ -3,12 +3,12 @@
     <!--教师端-->
     <ul v-if="this.activeName=='resoure'||this.activeName=='class'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>
       </li>
       <li class="login">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
-            周周<span class="span-text">教师</span><i class="el-icon-arrow-down el-icon--right"></i>
+            赵立楠<span class="span-text">教师</span><i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu class="dropdom-cont" slot="dropdown"><router-link  :to="{path:'/'}" >
             <el-dropdown-item>退出</el-dropdown-item></router-link>
@@ -34,12 +34,12 @@
     <!--院校管理-->
     <ul v-if="this.activeName=='collegesmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>
       </li>
       <li class="login">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
-            木糖醇<span class="span-text">院校管理员</span><i class="el-icon-arrow-down el-icon--right"></i>
+            孙婷婷<span class="span-text">院校管理员</span><i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu class="dropdom-cont" slot="dropdown"><router-link  :to="{path:'/'}" >
             <el-dropdown-item>退出</el-dropdown-item></router-link>
@@ -55,12 +55,12 @@
     <!--平台管理-->
     <ul v-if="this.activeName=='platformmant'" class="pre-box header-list">
       <li class="logo">
-        LOGO
+        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>
       </li>
       <li class="login">
         <el-dropdown trigger="click">
           <span class="el-dropdown-link">
-            嘎巴都<span class="span-text">平台管理员</span><i class="el-icon-arrow-down el-icon--right"></i>
+            李梓轩<span class="span-text">平台管理员</span><i class="el-icon-arrow-down el-icon--right"></i>
           </span>
           <el-dropdown-menu class="dropdom-cont" slot="dropdown"><router-link  :to="{path:'/'}" >
             <el-dropdown-item>退出</el-dropdown-item></router-link>

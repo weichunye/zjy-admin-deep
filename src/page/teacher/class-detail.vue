@@ -518,7 +518,12 @@ import Heade from '../../components/heade.vue'
             float: right;
             margin: 0 10px;
           }
-
+          .el-button--primary{
+            background: #3901b9;
+            span{
+              color:#ffffff;
+            }
+          }
         }
       }
     }
@@ -526,6 +531,12 @@ import Heade from '../../components/heade.vue'
   .dialog-form{
     .el-form-item__label{
       text-align: center;
+    }
+    .el-button--primary{
+      background: #3901b9;
+      span{
+        color:#ffffff;
+      }
     }
   }
 </style>
