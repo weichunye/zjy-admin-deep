@@ -85,6 +85,7 @@ import Heade from '../../components/heade.vue'
       min-height: 600px;
       background: #fff;
       display: flex;
+      padding:0 30px;
       .pre-top{
         padding: 1% 3%;
         width:17%;
@@ -120,6 +121,32 @@ import Heade from '../../components/heade.vue'
         img{
           width: 100%;
           height: auto;
+        }
+      }
+      .img-box{
+        &::-webkit-scrollbar {/*滚动条整体样式*/
+          width: 5px;     /*高宽分别对应横竖滚动条的尺寸*/
+          height: 10px;
+
+        }
+        &::-webkit-scrollbar-thumb {/*滚动条里面小方块*/
+
+          border-radius: 10px;
+
+          -webkit-box-shadow:none;
+
+          background: #ffffff;
+
+        }
+
+        &::-webkit-scrollbar-track {/*滚动条里面轨道*/
+
+          -webkit-box-shadow:none;
+
+          border-radius: 10px;
+
+          background:#ffffff;
+
         }
       }
     }

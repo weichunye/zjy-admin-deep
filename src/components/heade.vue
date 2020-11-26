@@ -19,6 +19,26 @@
 <!--        <li @click="openScreen">-->
 <!--          投屏-->
 <!--        </li>-->
+        <li class="class"  @click="centerDialogShared = true">
+          共享屏幕
+        </li>
+        <el-dialog
+          title="提示"
+          :visible.sync="centerDialogShared"
+          width="30%"
+          class="hand-tit"
+          :before-close="handleClose"
+          :modal-append-to-body="false"
+          center>
+          <span style="text-align: center; display: block;">
+            <el-radio v-model="radio" label="1">大屏</el-radio>
+            <el-radio v-model="radio" label="2">学生端</el-radio>
+          </span>
+          <span slot="footer" class="dialog-footer">
+            <el-button @click="centerDialogShared = false">取 消</el-button>
+            <el-button type="primary" @click="handleClose">确 定</el-button>
+          </span>
+        </el-dialog>
         <router-link  :to="{path:'/resource-teacher'}" >
           <li :class="[this.activeName=='resoure'?'activename':'']">
             资源库
@@ -96,7 +116,9 @@
 
     data() {
       return {
-        screenVisible:false
+        screenVisible:false,
+        centerDialogShared:false,
+        radio: '1'
       }
     },
     computed:{
@@ -115,7 +137,14 @@
           this.screenVisible=false
         },5000)
 
-      }
+      },
+      handleClose(){
+        this.centerDialogShared=false
+        this.$message({
+          message: '共享成功!',
+          type: 'success'
+        });
+      },
 
     }
   }
@@ -234,6 +263,21 @@
         color: #999;
         line-height: 40px;
         text-align: center;
+      }
+    }
+    .hand-tit{
+      .el-radio__input.is-checked .el-radio__inner{
+        background: #3901b9;
+        border-color:#3901b9;
+      }
+      .el-radio__input.is-checked+.el-radio__label{
+        color:#3901b9;
+      }
+      .el-button--primary{
+        background: #3901b9;
+        span{
+          color: #ffffff;
+        }
       }
     }
   }
