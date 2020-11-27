@@ -4,7 +4,7 @@
     <div class="pre-box content">
       <div class="text-box">
         <p>
-          <span>名称：</span>电路
+          <span>名称：</span>{{resourceData.name}}
         </p>
         <p style="width: 360px; margin:10px auto; overflow:hidden;">
          <span > 学习进度：</span>
@@ -13,19 +13,19 @@
 
         </p>
         <p>
-          <span>课节：</span>12
+          <span>课节：</span>{{resourceData.desc}}
         </p>
 <!--        <p>-->
 <!--          <span>开课日期：</span>2020-02-23-->
 <!--        </p>-->
         <p>
-          <span style="display:block;">课程封面：</span><img src="//edu-image.nosdn.127.net/607D19F93EEBE2BD1493A8AB359CF2ED.jpg?imageView&quality=100&thumbnail=230y130&type=webp" alt="">
+          <span style="display:block;">课程封面：</span><img :src="resourceData.img" alt="">
         </p>
 <!--        <p>-->
 <!--          <span>课程类型：</span>必修-->
 <!--        </p>-->
         <p>
-          <span>描述：</span>电路课程是电工类及电子信息类专业的一门重要的技术基础课。本课程讲授电路理论的基础知识和电路分析与计算的基本方法。内容包括：电路基本定律、电路定理、线性电路的基本分析方法、线性动态电路的时域分析法、线性动态电路的复频域分析法、正弦电流电路的稳态分析、非正弦周期电流电路的谐波分析法等。本课程理论严密、逻辑性强、有广阔的工程背景。学习本课程对培养科学思维能力、树立工程观点和提高分析与解决问题的能力有重要的作用。
+          <span>描述：</span>{{resourceData.desc}}
         </p>
       </div>
     </div>
@@ -65,14 +65,15 @@
             '         程简介课程简介课程简介'
         },
         addDiscusssVisible:false,
-        dialogType:1
+        dialogType:1,
+        resourceData:''
       }
 		},
       computed:{
 
       },
 		mounted() {
-
+      this.resourceData=this.$route.params.resourceData
 
 		},
 

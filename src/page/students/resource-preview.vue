@@ -4,21 +4,21 @@
     <div class="pre-box content">
       <div class="pre-top">
         <h3>
-          中国古代房内考》(高罗佩)扫描版
+          {{resourceData.name}}
         </h3>
         <ul>
           <li>
             上传人：周周
           </li>
           <li>
-            上传时间：2020-03-16
+            上传时间： {{resourceData.time}}
           </li>
         </ul>
-        <p>资源介绍：《中国古代房内考》是关于中国古代性文化的专著，在西方汉学界享有盛誉，从根本上影响和改变了西方世界对中国的了解。</p>
+        <p>资源介绍：{{resourceData.desc}}</p>
         <p>预览时间：0时3分{{prewTime}}秒</p>
       </div>
       <div class="img-box">
-        <img src="http://img.xuexi111.org/d/file/kejian/wenxue/2014-12-01/c65a3ae8860d18b6034db55198e59fec.jpg" alt="">
+        <img :src="resourceData.img" alt="">
       </div>
     </div>
     <div class="footer">
@@ -49,13 +49,15 @@
 
         },
         radio:'1',
-        prewTime:13
+        prewTime:13,
+        resourceData:''
       }
 		},
       computed:{
 
       },
 		mounted() {
+      this.resourceData=this.$route.params.resourceData
       setInterval(()=>{
         if(this.prewTime<60){
           this.prewTime=this.prewTime+1

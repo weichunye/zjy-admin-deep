@@ -4,7 +4,7 @@
     <div class="pre-box content">
       <el-row :gutter="20">
         <el-col :span="8" v-for="item of dataList">
-          <router-link  :to="{path:'/class-detail-s',query:{id:'2'}}" >
+          <router-link :to="{name:'ClassDetailStudents',params:{resourceData:item}}">
           <dl>
             <dt>
               <img :src="item.img" alt="">
@@ -62,13 +62,13 @@
           imageUrl:''
         },
         dataList:[
-          {name:'电路',desc:"12",desc1:"电路课程是电工类及电子信息类专业的一门重要的技术基础课",img:'//edu-image.nosdn.127.net/607D19F93EEBE2BD1493A8AB359CF2ED.jpg?imageView&quality=100&thumbnail=230y130&type=webp', proce: '92'},
-          {name:'人工智能概论',desc:"24",desc1:"智创未来，未来已来。这是一个人工智能的时代",img:'//edu-image.nosdn.127.net/1CB1B73A8A8347E19E69A4FB839F0162.jpg?imageView&quality=100&thumbnail=230y130&type=webp', proce: '62'},
-          {name:'《红楼梦》经典章回评讲',desc:"12",desc1:"十八世纪中叶，一位名为爱新觉罗·永忠的早期红迷，曾高度赞扬《红楼梦》：“传神文笔足千秋，不是情人不泪流",img:'//edu-image.nosdn.127.net/60ACB02668D9FA965151A65F2A8087C7.jpeg?imageView&quality=100&thumbnail=230y130&type=webp', proce: '89'},
-          {name:'灵感捕手：设计的创意狂想',desc:"16",desc1:"这是一门会令你脑洞大开的课程，这是一门会让你觉得不可思议的课程，这是一门让你换个角度看世界的课程，原来创意",img:'//edu-image.nosdn.127.net/069B31E2B28F53E57630501EF10F6754.jpg?imageView&quality=100&thumbnail=230y130&type=webp', proce: '76'},
-          {name:'Power Electronics',desc:"14",desc1:"For power electronics, it can be seen as the muscle in modern technology and human society. Thus, how to",img:'//edu-image.nosdn.127.net/d9084f0b7bd344219cfcfbe2084dbfec.png?imageView&quality=100&thumbnail=230y130&type=webp', proce: '45'},
-          {name:'寄生人体的恶魔—医学寄生虫学',desc:"16",desc1:"寄生虫肉眼可见或不可见，可以是嗜血的昆虫蜱虫，致命的蠕虫原虫；可以潜伏人体、劫持人体免疫系统并伺机爆发、甚",img:'//edu-image.nosdn.127.net/F30EC78AEEAD2AF01CAC3E2FFD164E28.png?imageView&quality=100&thumbnail=230y130&type=webp', proce: '78'},
-          {name:'计量经济学',desc:"16",desc1:"计量经济学是现代经济学的核心方法论。如果说爱因斯坦用现存最严谨的语言——数学，证明了宇宙的合理性。那么，计",img:'//edu-image.nosdn.127.net/8F7A876429585CE513911FE47FDC532B.jpg?imageView&quality=100&thumbnail=230y130&type=webp', proce: '88'},
+          {name:'电路',desc:"12",desc1:"电路课程是电工类及电子信息类专业的一门重要的技术基础课",img:require("../../assets/classImg/pic_1.jpg")},
+          {name:'人工智能概论',desc:"24",desc1:"智创未来，未来已来。这是一个人工智能的时代",img:require("../../assets/classImg/pic_2.jpg")},
+          {name:'《红楼梦》经典章回评讲',desc:"12",desc1:"十八世纪中叶，一位名为爱新觉罗·永忠的早期红迷，曾高度赞扬《红楼梦》：“传神文笔足千秋，不是情人不泪流",img:require("../../assets/classImg/pic_3.png")},
+          {name:'灵感捕手：设计的创意狂想',desc:"16",desc1:"这是一门会令你脑洞大开的课程，这是一门会让你觉得不可思议的课程，这是一门让你换个角度看世界的课程，原来创意",img:require("../../assets/classImg/pic_4.jpg")},
+          {name:'Power Electronics',desc:"14",desc1:"For power electronics, it can be seen as the muscle in modern technology and human society. Thus, how to",img:require("../../assets/classImg/pic_5.png")},
+          {name:'寄生人体的恶魔—医学寄生虫学',desc:"16",desc1:"寄生虫肉眼可见或不可见，可以是嗜血的昆虫蜱虫，致命的蠕虫原虫；可以潜伏人体、劫持人体免疫系统并伺机爆发、甚",img:require("../../assets/classImg/pic_6.png")},
+          {name:'计量经济学',desc:"16",desc1:"计量经济学是现代经济学的核心方法论。如果说爱因斯坦用现存最严谨的语言——数学，证明了宇宙的合理性。那么，计",img:require("../../assets/classImg/pic_7.jpg")},
         ],
       }
 		},
