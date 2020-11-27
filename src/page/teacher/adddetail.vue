@@ -2,29 +2,31 @@
 	<div class="class-detailadd">
     <Heade :activeName="'class'"></Heade>
     <div class="pre-box content">
-      <div class="creatClass-dia">
-        <el-form ref="form" :model="classForm" label-width="80px">
-          <el-form-item label="名称">
-            <el-input v-model="classForm.name"></el-input>
-          </el-form-item>
-          <el-form-item label="封面" prop="pic">
-            <el-upload class="upload-demo" action="" :auto-upload='false' :on-change='changeUpload'>
-              <el-button size="small" type="primary">点击上传</el-button>
-              <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
-            </el-upload>
-          </el-form-item>
-          <el-form-item label="课节">
-            <el-input-number v-model="classForm.desc" controls-position="right"></el-input-number>
-          </el-form-item>
-          <el-form-item label="描述" prop="desc1">
-            <el-input type="textarea" v-model="classForm.desc1"></el-input>
-          </el-form-item>
-        </el-form>
+      <div class="cont-box">
+        <div class="creatClass-dia">
+          <el-form ref="form" :model="classForm" label-width="80px">
+            <el-form-item label="名称">
+              <el-input v-model="classForm.name"></el-input>
+            </el-form-item>
+            <el-form-item label="封面" prop="pic">
+              <el-upload class="upload-demo" action="" :auto-upload='false' :on-change='changeUpload'>
+                <el-button size="small" type="primary">点击上传</el-button>
+                <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+              </el-upload>
+            </el-form-item>
+            <el-form-item label="课节">
+              <el-input-number v-model="classForm.desc" controls-position="right"></el-input-number>
+            </el-form-item>
+            <el-form-item label="描述" prop="desc1">
+              <el-input type="textarea" v-model="classForm.desc1"></el-input>
+            </el-form-item>
+          </el-form>
+        </div>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="creatClassVisible = false">取 消</el-button>
+            <el-button type="primary" @click="creatClassSuccess">确 定</el-button>
+          </span>
       </div>
-          <span slot="footer" class="dialog-footer">
-        <el-button @click="creatClassVisible = false">取 消</el-button>
-        <el-button type="primary" @click="creatClassSuccess">确 定</el-button>
-      </span>
     </div>
     <div class="footer"></div>
 	</div>
@@ -138,9 +140,14 @@ import Heade from '../../components/heade.vue'
       border-bottom:5px solid #3901b9;
     }
     .content{
-      border:1px solid #3901b9;
       background: #ffffff;
       padding-bottom:30px;
+      .cont-box{
+        border:1px solid #3901b9;
+        display: block;
+        margin:0 50px;
+        //padding:0 50px;
+      }
       .el-button--primary{
         background-color: #3901b9;
         border-color: #3901b9;
@@ -163,7 +170,7 @@ import Heade from '../../components/heade.vue'
 	}
   .creatClass-dia{
     margin: 40px auto;
-    //width: 100%;
+    width: 90%;
     min-height: 300px;
    .add-data{
      padding: 10px;

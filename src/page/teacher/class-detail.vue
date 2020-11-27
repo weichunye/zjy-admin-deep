@@ -2,7 +2,7 @@
 	<div class="class-detail">
     <Heade :activeName="'class'"></Heade>
     <div class="pre-box content">
-      <el-tabs type="border-card">
+      <el-tabs type="border-card" style="margin:0 40px;">
         <el-tab-pane>
           <span slot="label"> 课程详情</span>
           <div class="text-box">
@@ -60,8 +60,6 @@
 
         </el-tab-pane>
       </el-tabs>
-
-
     </div>
     <el-dialog
       title="备课"
@@ -94,8 +92,12 @@
             <div class="add-data">
               <el-row :gutter="20">
                 <el-col :span="24">
-                  <el-button @click="addDiscusssVisible=true,dialogType=1" size="small" type="primary">添加投票</el-button>
-                </el-col></el-row>
+                  <el-button @click="handleAddActive(1)" size="small" type="primary" style="margin-left:10px;">添加投票</el-button>
+                  <el-button @click="handleAddActive(4)" size="small" type="primary">添加讨论</el-button>
+                  <el-button @click="handleAddActive(5)" size="small" type="primary">抢答</el-button>
+                  <el-button @click="handleAddActive(6)" size="small" type="primary">签到</el-button>
+                </el-col>
+              </el-row>
               <div class="li-name" v-for="item of tpList">
                 {{item.name}} <span>删除</span>
               </div>
@@ -109,7 +111,7 @@
   </span>
     </el-dialog>
     <el-dialog
-      :title="dialogType==1?'添加投票':dialogType==2?'添加互动课堂':'编辑互动课堂'"
+      :title="dialogType==1?'添加投票':dialogType==2?'添加互动课堂':dialogType==4?'添加讨论':dialogType==5?'抢答':dialogType==6?'签到':'编辑互动课堂'"
       :visible.sync="addDiscusssVisible"
       class="dialog-form"
       width="30%">
@@ -133,7 +135,32 @@
             </el-form-item>
           </el-form-item>
         </el-form>
-        <el-form v-else ref="form" :model="HudongForm" label-width="80px">
+
+        <el-form v-if="dialogType==4" ref="form" :model="discussaForma" label-width="80px">
+          <el-form-item label="讨论名称">
+            <el-input v-model="discussaForma.namea"></el-input>
+          </el-form-item>
+          <el-form-item label="讨论描述" prop="desc">
+            <el-input type="textarea" v-model="discussForma.desca"></el-input>
+          </el-form-item>
+        </el-form>
+
+        <el-form v-if="dialogType==5" ref="form" :model="answerForma" label-width="80px">
+          <el-form-item label="抢答">
+            <el-input v-model="answerForma.namea"></el-input>
+          </el-form-item>
+        </el-form>
+
+        <el-form v-if="dialogType==6" ref="form" :model="SignForma" label-width="80px">
+          <el-form-item label="签到名称">
+            <el-input v-model="SignForma.namea"></el-input>
+          </el-form-item>
+          <el-form-item label="签到地点" prop="desc">
+            <el-input type="textarea" v-model="SignForma.desca"></el-input>
+          </el-form-item>
+        </el-form>
+
+        <el-form v-if="dialogType==2||dialogType==3" ref="form" :model="HudongForm" label-width="80px">
           <el-form-item label="课堂名称">
             <el-input v-model="HudongForm.name"></el-input>
           </el-form-item>
@@ -221,6 +248,22 @@ import Heade from '../../components/heade.vue'
           optionsB:'',
           optionsC:'',
         },
+        discussForma:{
+          namea:'',
+          desca:''
+        },
+        discussaForma:{
+          namea:'',
+          desca:''
+        },
+        SignForma:{
+          namea:'',
+          desca:''
+        },
+        answerForma:{
+          namea:'',
+          desca:''
+        },
         HudongForm:{
           name:'',
           startTime:''
@@ -283,6 +326,11 @@ import Heade from '../../components/heade.vue'
           let obj = {name: this.discussForm.name}
           this.tpList.push(obj)
         }
+      },
+      handleAddActive(index){
+        this.dialogType=index
+        this.addDiscusssVisible=true
+
       },
       creatClassSuccess(){
         this.creatClassVisible=false

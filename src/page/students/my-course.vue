@@ -184,7 +184,7 @@
       padding: 10px 20px;
       font-size: 16px;
       color: #fff;
-      background: #17ae54;
+      background: #3901b9;
       cursor: pointer;
       border-radius: 6px;
     }

@@ -27,10 +27,10 @@
           :visible.sync="centerDialogShared"
           width="30%"
           class="hand-tit"
-          :before-close="handleClose"
           :modal-append-to-body="false"
           center>
           <span style="text-align: center; display: block;">
+            <span style="display:block;">请选择以下要分享的分容：</span>
             <el-radio v-model="radio" label="1">大屏</el-radio>
             <el-radio v-model="radio" label="2">学生端</el-radio>
           </span>

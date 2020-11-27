@@ -32,7 +32,7 @@
         :visible.sync="dialogVisible"
         class="title-Class"
         width="40%"
-        :before-close="handleClose">
+        >
         <div class="text">
           <el-form ref="form" :model="classForm" label-width="160px">
             <el-form-item label="审核是否通过">
@@ -54,7 +54,7 @@
         title="提示"
         :visible.sync="uploadVisible"
         width="30%"
-        :before-close="handleClose">
+        >
         <span>是否向上共享到平台资源库</span>
         <span slot="footer" class="dialog-footer">
     <el-button @click="uploadVisible = false">取 消</el-button>
@@ -160,6 +160,7 @@
   .collegesmant-cont{
     min-height:500px;
     display: block;
+    margin:0 40px;
     .sechinput{
       display: flex;
       padding:20px 20px;
