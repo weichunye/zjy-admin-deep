@@ -98,6 +98,7 @@ import Heade from '../../components/heade.vue'
         		 }
         	})
         } else {
+          _this.classForm.img=require("../../assets/teacher/show_1.png")
         	this.$router.push({
         		path: '/enter',
         		query: {
