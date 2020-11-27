@@ -11,7 +11,7 @@
       </el-row>
       <el-row :gutter="20" class="row-content">
         <el-col v-for="item in dataList" :span="8">
-          <router-link  :to="{path:'/Class-detail',query:{id:'2'}}" >
+          <router-link :to="{name:'ClassDetail',params:{resourceData:item}}">
           <dl style="height: 346px;">
             <dt>
               <img :src="item.img" alt="">

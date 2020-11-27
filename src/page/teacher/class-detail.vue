@@ -7,22 +7,22 @@
           <span slot="label"> 课程详情</span>
           <div class="text-box">
             <p>
-              <span>名称：</span>{{classForm.name}}
+              <span>课程名称：</span>{{resourceData.name}}
             </p>
             <p>
-              <span>课时：</span>{{classForm.desc}}
+              <span>课时：</span>{{resourceData.desc}}
             </p>
 <!--            <p>-->
 <!--              <span>开课日期：</span>2020-02-23-->
 <!--            </p>-->
             <p>
-              <span >课程封面：</span><img :src="classForm.img" alt="">
+              <span >课程封面：</span><img :src="resourceData.img" alt="">
             </p>
 <!--            <p>-->
 <!--              <span>课程类型：</span>必修-->
 <!--            </p>-->
             <p>
-              <span>描述：</span>{{classForm.desc1}}
+              <span>描述：</span>{{resourceData.desc1}}
             </p>
           </div>
           <el-row >
@@ -300,13 +300,15 @@ import Heade from '../../components/heade.vue'
         tpList: [
           {name:'本节最喜欢的任务'},
           {name:'最有特点的地方'}
-        ]
+        ],
+        resourceData:''
       }
 		},
       computed:{
 
       },
 		mounted() {
+      this.resourceData=this.$route.params.resourceData
 
 
 		},
