@@ -3,7 +3,7 @@
     <!--教师端-->
     <ul v-if="this.activeName=='resoure'||this.activeName=='class'" class="pre-box header-list">
       <li class="logo">
-        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>
+<!--        LOGO<span style="font-size:12px; color:#3901b9;">(第三版)</span>-->
       </li>
       <li class="login">
         <el-dropdown trigger="click">
