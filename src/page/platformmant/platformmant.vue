@@ -90,8 +90,10 @@
       // },
       handleClose() {
         this.dialogVisible=false
-        this.$message({
-          message: '审核完成',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '审核完成!',
           type: 'success'
         });
         this.dataList[this.itemNum].isAccess=true

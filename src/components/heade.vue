@@ -140,7 +140,9 @@
       },
       handleClose(){
         this.centerDialogShared=false
-        this.$message({
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
           message: '共享成功!',
           type: 'success'
         });

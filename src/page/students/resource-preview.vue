@@ -73,8 +73,10 @@
 		methods: {
       creatClassSuccess(){
         this.creatClassVisible=false
-        this.$message({
-          message: '资源添加成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '资源添加成功!',
           type: 'success'
         });
       },

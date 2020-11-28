@@ -117,8 +117,10 @@
       handleClose() {
         this.dialogVisible=false
         this.isAccess=true
-        this.$message({
-          message: '审核完成',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '审核完成!',
           type: 'success'
         });
         this.dataList[this.itemNum].isAccess=true
@@ -127,8 +129,10 @@
       },
       handleUpload(){
         this.uploadVisible=false
-        this.$message({
-          message: '上传成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '上传成功!',
           type: 'success'
         });
         this.dataList[this.itemNum].isUpload=false

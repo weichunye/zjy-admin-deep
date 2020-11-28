@@ -76,10 +76,12 @@ import Heade from '../../components/heade-students.vue'
       creatClassSuccess(){
         let  _this=this
         this.creatClassVisible=false
-        this.$message({
-          message: '资源添加成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '资源添加成功!',
           type: 'success'
-        })
+        });
         let newForm={type:3,name:this.classForm.name,desc:this.classForm.desc}
         _this.dataList.push(newForm)
       },

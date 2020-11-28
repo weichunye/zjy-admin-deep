@@ -120,9 +120,9 @@
           <el-form-item label="投票名称">
             <el-input v-model="discussForm.name"></el-input>
           </el-form-item>
-          <el-form-item label="投票描述" prop="desc">
-            <el-input type="textarea" v-model="discussForm.desc"></el-input>
-          </el-form-item>
+<!--          <el-form-item label="投票描述" prop="desc">-->
+<!--            <el-input type="textarea" v-model="discussForm.desc"></el-input>-->
+<!--          </el-form-item>-->
           <el-form-item label="投票选项">
             <el-form-item label="选项A" style="margin:5px auto;">
               <el-input v-model="discussForm.optionsA"></el-input>
@@ -146,7 +146,7 @@
         </el-form>
 
         <el-form v-if="dialogType==5" ref="form" :model="answerForma" label-width="80px">
-          <el-form-item label="抢答">
+          <el-form-item label="抢答课程">
             <el-input v-model="answerForma.namea"></el-input>
           </el-form-item>
         </el-form>
@@ -316,8 +316,14 @@ import Heade from '../../components/heade.vue'
 		methods: {
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
-        this.$message({
-          message: this.dialogType==1?'添加投票成功':'添加课堂成功',
+        // this.$message({
+        //   message: this.dialogType==1?'添加投票成功':'添加课堂成功',
+        //   type: 'success'
+        // });
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: this.dialogType==1?'添加投票成功 !':this.dialogType==4?'添加讨论成功 !':this.dialogType==5?'抢答编辑成功 !':this.dialogType==6?'签到成功 !':'添加课堂成功 !',
           type: 'success'
         });
         if (this.dialogType==2 && this.tabType == 2) { // 互动课堂添加
@@ -336,8 +342,10 @@ import Heade from '../../components/heade.vue'
       },
       creatClassSuccess(){
         this.creatClassVisible=false
-        this.$message({
-          message: '课程编辑成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '课程编辑成功 !',
           type: 'success'
         });
       },

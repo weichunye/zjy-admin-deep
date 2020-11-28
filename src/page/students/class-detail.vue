@@ -80,16 +80,25 @@
 		methods: {
       creatDiscusssSuccess(){
         this.addDiscusssVisible=false
-        this.$message({
-          message: this.dialogType==1?'添加讨论成功':'添加课堂成功',
+        // this.$message({
+        //   message: this.dialogType==1?'添加讨论成功':'添加课堂成功',
+        //   type: 'success'
+        // });
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: this.dialogType==1?'添加讨论成功!':'添加课堂成功!',
           type: 'success'
         });
+
 
       },
       creatClassSuccess(){
         this.creatClassVisible=false
-        this.$message({
-          message: '课程编辑成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '课程编辑成功 !',
           type: 'success'
         });
       },

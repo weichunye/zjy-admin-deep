@@ -10,7 +10,7 @@
       <el-row :gutter="20">
 
         <el-col v-for="item in dataList" :span="8" :class="'bg-'+item.type">
-          <router-link :to="{name:'ResourcePreview',params:{resourceData:item}}">
+          <router-link  :to="{name:'ResourcePreview',params:{resourceData:item}}">
           <dl class="bg">
 <!--            <dt>-->
 <!--            {{item.type==1?"Word":item.type==2?"PDF":"IMG"}}-->
@@ -89,8 +89,8 @@ import Heade from '../../components/heade.vue'
           {name:'《中国古代房内考》(高罗佩)扫描版',desc:'《中国古代房内考》是关于中国古代性文化的专著，在西方汉学界享有盛誉，从根本上影响和改变了西方世界对中国的了解。 ',desc1:'pdf','img':require("../../assets/pic/pic_1.jpg")},
           // "http://img.xuexi111.org/d/file/kejian/wenxue/2014-12-01/c65a3ae8860d18b6034db55198e59fec.jpg"
           {name:'《图解经典系列》扫描版',desc:'图解经典系列是一套图文并茂的图书，该系列对中华经典文化书籍重新进行诠释和解说，通俗易懂，简单实用。',desc1:'pdf','img':require("../../assets/pic/pic_2.jpg")},
-          {name:'《小小黑客之路—黑客工具、攻防及防火墙编程入门》',desc:'你推开“黑客”，看见一条路，笑了；他推开“安全”，看见你，也笑了。这就是你的小小黑客之路。','desc1':'pdf','img':require("../../assets/pic/pic_3.jpg")},
-          {name:'《20几岁要懂得的社会常识大全集》扫描版','desc':'本书旨在给20几岁的年轻人提供一剂处世良方、一个智慧锦囊，系统介绍了与人相处、识人、社交心理学、人脉，办事、送礼、宴请、潜规则、职场生存、形象、礼仪、口才、沟通、创业、理财、安全等方面的社会常识，针对社会生活中经常要面对的各种情景、事件、场合，深入解析人的微妙心理和复杂的人际关系、社会生活方方面面的各式潜规则、古往今来的老经验，帮助年轻人游刃有余地应对生活、事业中的各种问题。 ','desc1':'pdf','img':require("../../assets/pic/pic_4.jpg")},
+          {name:'《小小黑客之路—黑客工具、攻防及防火墙编程入门》',desc:'你推开“黑客”，看见一条路，笑了；他推开“安全”，看见你，也笑了。这就是你的小小黑客之路。',desc1:'pdf','img':require("../../assets/pic/pic_3.jpg")},
+          {name:'《20几岁要懂得的社会常识大全集》扫描版','desc':'本书旨在给20几岁的年轻人提供一剂处世良方、一个智慧锦囊，系统介绍了与人相处、识人、社交心理学、人脉，办事、送礼、宴请、潜规则、职场生存、形象、礼仪、口才、沟通、创业、理财、安全等方面的社会常识，针对社会生活中经常要面对的各种情景、事件、场合，深入解析人的微妙心理和复杂的人际关系、社会生活方方面面的各式潜规则、古往今来的老经验，帮助年轻人游刃有余地应对生活、事业中的各种问题。 ',"desc1":'pdf','img':require("../../assets/pic/pic_4.jpg")},
           {name:'《心理学专业书籍与资源汇总》','desc':'心理学(Psychology)是研究人和动物心理现象发生、发展和活动规律的一门科学。心理学既研究动物的心理（研究动物心理主要是为了深层次地了解、预测人的心理的发生、发展的规律）也研究人的心理，而以人的心理现象为主要研究对象。 ','desc1':'pdf','img':require("../../assets/pic/pic_5.jpg")},
           {name:'《性学观止（上下册）（插图第6版）》','desc':'美国历史上第一部成功的性学教科书，也是性教育领域的一部经典入门书，被世界多所大学广泛采用为性学课程教材，已被翻译成法语、西班牙语、葡萄牙语、汉语等多种文字。 ','desc1':'pdf','img':require("../../assets/pic/pic_6.jpg")},
           {name:'《超级恋爱催眠术》','desc':'《超级恋爱催眠术》林贞年·催眠图书系列为大众入门类读物，均图文并茂。催眠是作用于无意识的一种技巧，而无意识的力量总是强过意识的力量。 ','desc1':'pdf','img':require("../../assets/pic/pic_7.jpg")},
@@ -131,10 +131,12 @@ import Heade from '../../components/heade.vue'
       creatClassSuccess(){
         let  _this=this
         this.creatClassVisible=false
-        this.$message({
-          message: '资源添加成功',
+        this.$notify({
+          title: '成功',
+          customClass:'classtc',
+          message: '资源添加成功!',
           type: 'success'
-        })
+        });
         let newForm={type:3,name:this.classForm.name,desc:this.classForm.desc}
         _this.dataList.push(newForm)
       },
